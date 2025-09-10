@@ -26,6 +26,7 @@ Backend API: **http://localhost:3000/api/quote**
 Frontend UI: **http://localhost:3000/**
 
 Design Decisions and Assumptions
+
 Used Express.js for quick and flexible backend API development.
 
 Utilized rate-limiter-flexible library for robust and precise IP-based rate limiting.
@@ -51,9 +52,10 @@ Returns a JSON object with a random inspirational quote.
 Example response:
 
 json
+
 { "quote": "The only way to do great work is to love what you do. - Steve Jobs" }
 
-Rate limit exceeded response:
+**Rate limit exceeded response:**
 
 HTTP status code 429
 
