@@ -43,28 +43,43 @@ Assumed single instance server deployment; in-memory rate limiter is sufficient 
 No persistent storage or database required, all data and rate limit state kept in memory.
 
 API Endpoint
+
 GET /api/quote
+
 Returns a JSON object with a random inspirational quote.
+
 Example response:
+
 json
 { "quote": "The only way to do great work is to love what you do. - Steve Jobs" }
 
 Rate limit exceeded response:
+
 HTTP status code 429
+
 Example response:
+
 json
+
 { "error": "Rate limit exceeded. Try again in X seconds." }
+
 Testing the API
+
 You can test the API using curl or Postman.
 
 Fetch a random quote:
-**curl http://localhost:3000/api/quote**
+
+**curl http://localhost:3000/api/quote
+
 To test rate limiting, make more than 5 requests within one minute from the same IP, e.g.:
 
 If deployed, put the public URL here, e.g.:
+
 https://your-domain.com/api/quote
 
 Bonus Features (Optional)
+
 Unit tests for rate-limiting logic (can be added later).
+
 Used rate-limiter-flexible library to handle concurrency and thread safety robustly.
 
