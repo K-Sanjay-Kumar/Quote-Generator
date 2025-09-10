@@ -1,13 +1,16 @@
-Project Title
+**Project Title:**
+
 Quote API with IP-Based Rate Limiting
 
-Description
+**Description:**
+
 A RESTful API built with Express.js that serves random inspirational quotes. It implements IP-based rate limiting to allow a maximum of 5 requests per minute from each unique IP to prevent abuse.
 
 Setup Instructions
 Clone the repository:
 
 **git clone <repository-url>**
+
 **cd <repository-folder>**
 
 Install dependencies:
