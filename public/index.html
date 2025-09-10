@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quote Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      text-align: center;
+    }
+    button {
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    #quote {
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Inspirational Quote Generator</h1>
+  <button id="generateBtn">Generate Quote</button>
+  <div id="quote"></div>
+
+  <script>
+    const button = document.getElementById('generateBtn');
+    const quoteDiv = document.getElementById('quote');
+
+    button.addEventListener('click', () => {
+      fetch('/api/quote')
+        .then(response => {
+          if (!response.ok) {
+            if(response.status === 429){
+              return response.json().then(data => { throw new Error(data.error); });
+            }
+            throw new Error('Failed to fetch quote');
+          }
+          return response.json();
+        })
+        .then(data => {
+          quoteDiv.textContent = data.quote;
+        })
+        .catch(error => {
+          quoteDiv.textContent = error.message;
+        });
+    });
+  </script>
+
+</body>
+</html>
