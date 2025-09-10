@@ -9,9 +9,9 @@ A RESTful API built with Express.js that serves random inspirational quotes. It 
 Setup Instructions
 Clone the repository:
 
-**git clone <repository-url>**
+**git clone repository-url**
 
-**cd <repository-folder>**
+**cd repository-folder**
 
 Install dependencies:
 **npm install**
